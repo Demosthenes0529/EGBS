@@ -1,0 +1,18 @@
+SPECK96 参数消融实验汇总
+input difference = (0x8000000, 0x0)
+base_nr = 8, search_nr = 11
+
+====================================================================================================
+setting         : Full
+tag             : Full_d2_top1_10_pop_2000_q_2
+delta / top1    : 2 / 10
+pop / q         : 2000 / 2
+best_weight     : 61.0
+base_time_sec   : 339.559
+search_time_sec : 508.422
+total_time_sec  : 1283.176
+num_final_paths : 2000
+result_txt      : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_11round_134217728_Full_d2_top1_10_pop_2000_q_2.txt
+result_pkl      : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_11round_134217728_Full_d2_top1_10_pop_2000_q_2.pkl
+best_path       : [('0x8000000', '0x0'), ('0x80000', '0x80000'), ('0x80800', '0x480800'), ('0x480008', '0x2084008'), ('0x800fe080808', '0x800ee4a0848'), ('0x772400040', '0x400000104200'), ('0x820200', '0x1202'), ('0x9000', '0x10'), ('0x80', '0x0'), ('0x800000000000', '0x800000000000'), ('0x808000000000', '0x808000000004'), ('0x800080000004', '0x840080000020')]
+

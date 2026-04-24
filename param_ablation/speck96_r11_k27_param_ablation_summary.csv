@@ -1,0 +1,2 @@
+setting,tag,delta,top1,population_size,q,best_weight,base_time_sec,search_time_sec,total_time_sec,num_final_paths,result_txt,result_pkl
+Full,Full_d2_top1_10_pop_2000_q_2,2,10,2000,2,61.0,339.55893564224243,508.42195320129395,1283.1756455898285,2000,./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_11round_134217728_Full_d2_top1_10_pop_2000_q_2.txt,./zcl/MCTS-Differential-Trail/saved_trail/speck96_11round_134217728_Full_d2_top1_10_pop_2000_q_2.pkl

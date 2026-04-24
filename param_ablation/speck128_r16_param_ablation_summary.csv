@@ -1,0 +1,2 @@
+setting,block_size,diff_l,diff_r,delta,top1,population_size,q,best_weight,time_sec,time_min,num_final_paths,result_txt,result_pkl
+pop-small,128,0x80,0x0,2,10,500,--,119.0,1380.6352021694183,23.010586702823637,500,./zcl/MCTS-Differential-Trail/saved_ea_txt/speck128/speck128_result_mcbs_16round_128_pop-small_d2_top1_10_pop_500.txt,./zcl/MCTS-Differential-Trail/saved_trail/speck128_16round_128_pop-small_d2_top1_10_pop_500.pkl

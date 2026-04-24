@@ -1,0 +1,24 @@
+diff,lp_file,sol_file,start_time,end_time,elapsed_seconds,exit_code,status
+12,/home/user/speck_output/speck96/speck96diff-12-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-12.sol,2026-04-16 23:08:17,2026-04-17 05:22:44,22467,0,FINISHED
+14,/home/user/speck_output/speck96/speck96diff-14-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-14.sol,2026-04-17 05:22:44,2026-04-17 07:28:41,7557,0,FINISHED
+16,/home/user/speck_output/speck96/speck96diff-16-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-16.sol,2026-04-17 07:28:41,2026-04-17 13:24:01,21320,0,FINISHED
+18,/home/user/speck_output/speck96/speck96diff-18-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-18.sol,2026-04-17 13:24:01,2026-04-17 16:12:23,10102,0,FINISHED
+20,/home/user/speck_output/speck96/speck96diff-20-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-20.sol,2026-04-17 16:12:23,2026-04-17 22:42:59,23436,0,FINISHED
+22,/home/user/speck_output/speck96/speck96diff-22-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-22.sol,2026-04-17 22:42:59,2026-04-17 23:15:21,1942,141,FAILED
+24,/home/user/speck_output/speck96/speck96diff-24-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-24.sol,2026-04-17 23:15:21,2026-04-17 23:15:23,2,141,FAILED
+26,/home/user/speck_output/speck96/speck96diff-26-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-26.sol,2026-04-17 23:15:23,2026-04-17 23:15:24,1,141,FAILED
+28,/home/user/speck_output/speck96/speck96diff-28-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-28.sol,2026-04-17 23:15:24,2026-04-17 23:15:25,1,141,FAILED
+30,/home/user/speck_output/speck96/speck96diff-30-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-30.sol,2026-04-17 23:15:25,2026-04-17 23:15:25,0,141,FAILED
+32,/home/user/speck_output/speck96/speck96diff-32-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-32.sol,2026-04-17 23:15:25,2026-04-17 23:15:25,0,141,FAILED
+34,/home/user/speck_output/speck96/speck96diff-34-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-34.sol,2026-04-17 23:15:25,2026-04-17 23:15:26,1,141,FAILED
+36,/home/user/speck_output/speck96/speck96diff-36-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-36.sol,2026-04-17 23:15:26,2026-04-17 23:15:26,0,141,FAILED
+38,/home/user/speck_output/speck96/speck96diff-38-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-38.sol,2026-04-17 23:15:26,2026-04-17 23:15:26,0,141,FAILED
+21,/home/user/speck_output/speck96/speck96diff-21-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-21.sol,2026-04-17 23:20:56,2026-04-18 01:14:30,6814,0,FINISHED
+23,/home/user/speck_output/speck96/speck96diff-23-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-23.sol,2026-04-18 01:14:30,2026-04-18 03:10:22,6952,0,FINISHED
+25,/home/user/speck_output/speck96/speck96diff-25-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-25.sol,2026-04-18 03:10:22,2026-04-18 04:59:07,6525,0,FINISHED
+27,/home/user/speck_output/speck96/speck96diff-27-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-27.sol,2026-04-18 04:59:07,2026-04-18 06:17:22,4695,0,FINISHED
+29,/home/user/speck_output/speck96/speck96diff-29-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-29.sol,2026-04-18 06:17:22,2026-04-18 08:18:41,7279,0,FINISHED
+31,/home/user/speck_output/speck96/speck96diff-31-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-31.sol,2026-04-18 08:18:41,2026-04-18 10:03:52,6311,0,FINISHED
+33,/home/user/speck_output/speck96/speck96diff-33-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-33.sol,2026-04-18 10:03:52,2026-04-18 14:05:50,14518,0,FINISHED
+35,/home/user/speck_output/speck96/speck96diff-35-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-35.sol,2026-04-18 14:05:50,2026-04-18 14:26:06,1216,141,FAILED
+37,/home/user/speck_output/speck96/speck96diff-37-round-11-fixed.lp,/home/user/speck_output/speck96/speck96round11-37.sol,2026-04-18 14:26:07,2026-04-18 14:26:07,0,141,FAILED

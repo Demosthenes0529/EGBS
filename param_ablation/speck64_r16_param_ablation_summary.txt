@@ -1,0 +1,109 @@
+SPECK64 参数消融实验汇总
+input difference = (0x80, 0x0)
+rounds = 16
+
+====================================================================================================
+setting         : Full
+tag             : Full_d2_top1_10_pop_2000
+block size      : 64
+diff            : ('0x8000000', '0x0')
+delta / top1    : 2 / 10
+pop / q         : 2000 / --
+best_weight     : 68.0
+time_sec        : 375.826
+time_min        : 6.26
+num_final_paths : 2000
+result_txt      : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck64/speck64_result_mcbs_12round_134217728_Full_d2_top1_10_pop_2000.txt
+result_pkl      : ./zcl/MCTS-Differential-Trail/saved_trail/speck64_12round_134217728_Full_d2_top1_10_pop_2000.pkl
+best_path       : [('0x8000000', '0x0'), ('0x80000', '0x80000'), ('0x80800', '0x480800'), ('0x480008', '0x2084008'), ('0x6080808', '0x164a0848'), ('0xf2400040', '0x40104200'), ('0x820200', '0x1202'), ('0x9000', '0x10'), ('0x80', '0x0'), ('0x80000000', '0x80000000'), ('0x80800000', '0x80800004'), ('0x80008004', '0x84008020'), ('0x808080a0', '0xa08481a4')]
+
+====================================================================================================
+setting         : delta-small
+tag             : delta-small_d1_top1_10_pop_2000
+block size      : 64
+diff            : ('0x8000000', '0x0')
+delta / top1    : 1 / 10
+pop / q         : 2000 / --
+best_weight     : 81.0
+time_sec        : 95.055
+time_min        : 1.58
+num_final_paths : 2000
+result_txt      : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck64/speck64_result_mcbs_12round_134217728_delta-small_d1_top1_10_pop_2000.txt
+result_pkl      : ./zcl/MCTS-Differential-Trail/saved_trail/speck64_12round_134217728_delta-small_d1_top1_10_pop_2000.pkl
+best_path       : [('0x8000000', '0x0'), ('0x80000', '0x80000'), ('0x80800', '0x480800'), ('0x480008', '0x2084008'), ('0x1a080808', '0xa4a0848'), ('0x12400040', '0x40104200'), ('0x20200', '0x801202'), ('0x801000', '0x4808010'), ('0x4800000', '0x20840080'), ('0x20808080', '0x24a08481'), ('0xa4800401', '0x81842008'), ('0x8020a004', '0x8c01a040'), ('0x808080a0', '0xe08d82a4')]
+
+====================================================================================================
+setting         : delta-large
+tag             : delta-large_d3_top1_10_pop_2000
+block size      : 64
+diff            : ('0x8000000', '0x0')
+delta / top1    : 3 / 10
+pop / q         : 2000 / --
+best_weight     : 68.0
+time_sec        : 1258.843
+time_min        : 20.98
+num_final_paths : 2000
+result_txt      : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck64/speck64_result_mcbs_12round_134217728_delta-large_d3_top1_10_pop_2000.txt
+result_pkl      : ./zcl/MCTS-Differential-Trail/saved_trail/speck64_12round_134217728_delta-large_d3_top1_10_pop_2000.pkl
+best_path       : [('0x8000000', '0x0'), ('0x80000', '0x80000'), ('0x80800', '0x480800'), ('0x480008', '0x2084008'), ('0x6080808', '0x164a0848'), ('0xf2400040', '0x40104200'), ('0x820200', '0x1202'), ('0x9000', '0x10'), ('0x80', '0x0'), ('0x80000000', '0x80000000'), ('0x80800000', '0x80800004'), ('0x80008004', '0x84008020'), ('0x808080a0', '0xa08481a4')]
+
+====================================================================================================
+setting         : top1-small
+tag             : top1-small_d2_top1_5_pop_2000
+block size      : 64
+diff            : ('0x8000000', '0x0')
+delta / top1    : 2 / 5
+pop / q         : 2000 / --
+best_weight     : 79.0
+time_sec        : 220.246
+time_min        : 3.67
+num_final_paths : 2000
+result_txt      : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck64/speck64_result_mcbs_12round_134217728_top1-small_d2_top1_5_pop_2000.txt
+result_pkl      : ./zcl/MCTS-Differential-Trail/saved_trail/speck64_12round_134217728_top1-small_d2_top1_5_pop_2000.pkl
+best_path       : [('0x8000000', '0x0'), ('0x80000', '0x80000'), ('0x81800', '0x481800'), ('0x480008', '0x208c008'), ('0x6080808', '0x164e0848'), ('0xf2440040', '0x40344200'), ('0x1a20200', '0x1202'), ('0x9000', '0x10'), ('0x80', '0x0'), ('0x80000000', '0x80000000'), ('0x80800000', '0x80800004'), ('0x80008004', '0x84008020'), ('0x808080a0', '0xa08481a4')]
+
+====================================================================================================
+setting         : top1-large
+tag             : top1-large_d2_top1_20_pop_2000
+block size      : 64
+diff            : ('0x8000000', '0x0')
+delta / top1    : 2 / 20
+pop / q         : 2000 / --
+best_weight     : 68.0
+time_sec        : 395.169
+time_min        : 6.59
+num_final_paths : 2000
+result_txt      : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck64/speck64_result_mcbs_12round_134217728_top1-large_d2_top1_20_pop_2000.txt
+result_pkl      : ./zcl/MCTS-Differential-Trail/saved_trail/speck64_12round_134217728_top1-large_d2_top1_20_pop_2000.pkl
+best_path       : [('0x8000000', '0x0'), ('0x80000', '0x80000'), ('0x80800', '0x480800'), ('0x480008', '0x2084008'), ('0x6080808', '0x164a0848'), ('0xf2400040', '0x40104200'), ('0x820200', '0x1202'), ('0x9000', '0x10'), ('0x80', '0x0'), ('0x80000000', '0x80000000'), ('0x80800000', '0x80800004'), ('0x80008004', '0x84008020'), ('0x808080a0', '0xa08481a4')]
+
+====================================================================================================
+setting         : pop-small
+tag             : pop-small_d2_top1_10_pop_1000
+block size      : 64
+diff            : ('0x8000000', '0x0')
+delta / top1    : 2 / 10
+pop / q         : 1000 / --
+best_weight     : 68.0
+time_sec        : 161.744
+time_min        : 2.70
+num_final_paths : 1000
+result_txt      : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck64/speck64_result_mcbs_12round_134217728_pop-small_d2_top1_10_pop_1000.txt
+result_pkl      : ./zcl/MCTS-Differential-Trail/saved_trail/speck64_12round_134217728_pop-small_d2_top1_10_pop_1000.pkl
+best_path       : [('0x8000000', '0x0'), ('0x80000', '0x80000'), ('0x80800', '0x480800'), ('0x480008', '0x2084008'), ('0x6080808', '0x164a0848'), ('0xf2400040', '0x40104200'), ('0x820200', '0x1202'), ('0x9000', '0x10'), ('0x80', '0x0'), ('0x80000000', '0x80000000'), ('0x80800000', '0x80800004'), ('0x80008004', '0x84008020'), ('0x808080a0', '0xa08481a4')]
+
+====================================================================================================
+setting         : pop-large
+tag             : pop-large_d2_top1_10_pop_4000
+block size      : 64
+diff            : ('0x8000000', '0x0')
+delta / top1    : 2 / 10
+pop / q         : 4000 / --
+best_weight     : 68.0
+time_sec        : 685.205
+time_min        : 11.42
+num_final_paths : 4000
+result_txt      : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck64/speck64_result_mcbs_12round_134217728_pop-large_d2_top1_10_pop_4000.txt
+result_pkl      : ./zcl/MCTS-Differential-Trail/saved_trail/speck64_12round_134217728_pop-large_d2_top1_10_pop_4000.pkl
+best_path       : [('0x8000000', '0x0'), ('0x80000', '0x80000'), ('0x80800', '0x480800'), ('0x480008', '0x2084008'), ('0x6080808', '0x164a0848'), ('0xf2400040', '0x40104200'), ('0x820200', '0x1202'), ('0x9000', '0x10'), ('0x80', '0x0'), ('0x80000000', '0x80000000'), ('0x80800000', '0x80800004'), ('0x80008004', '0x84008020'), ('0x808080a0', '0xa08481a4')]
+

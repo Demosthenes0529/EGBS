@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and temp
+*.log
+*.tmp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Do not upload paper LaTeX folder
+IEEE-Transactions-LaTeX2e-templates-and-instructions/

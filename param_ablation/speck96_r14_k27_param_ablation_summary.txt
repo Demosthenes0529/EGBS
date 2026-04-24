@@ -1,0 +1,157 @@
+SPECK96 参数消融实验汇总（固定加载 tree + initial_paths 的严格可比版）
+input difference = (0x8000000, 0x0)
+base_nr = 8, search_nr = 14
+
+====================================================================================================
+setting                  : Full
+tag                      : Full_d2_top1_10_pop_2000_q_2
+delta / top1             : 2 / 10
+pop / q                  : 2000 / 2
+best_weight              : 84.0
+base_time_sec            : 0.000
+search_time_sec          : 773.067
+search_time_inner_sec    : 772.897
+total_time_sec           : 773.067
+num_final_paths          : 2000
+cached_tree_pkl          : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_8round_134217728_Full_d2_top1_10_pop_2000_q_2_base.pkl
+cached_initial_paths_pkl : ./zcl/MCTS-Differential-Trail/saved_initial_paths/speck96_6round_134217728_initial_paths_Full_d2_top1_10_pop_2000_q_2.pkl
+result_txt               : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_14round_134217728_Full_d2_top1_10_pop_2000_q_2.txt
+result_pkl               : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_14round_134217728_Full_d2_top1_10_pop_2000_q_2.pkl
+best_path                : [(134217728, 0), (524288, 524288), (526336, 4720640), (4718600, 34095112), (8800354961416, 8800090851400), (31981568064, 70368745243136), (8520192, 4610), (36864, 16), (128, 0), (140737488355328, 140737488355328), (141287244169216, 141287244169220), (140739635838980, 145137682350112), (141289400041504, 176490951999780), (140754668257572, 145273040963585), (176609055246464, 142524731934860)]
+
+====================================================================================================
+setting                  : delta-small
+tag                      : delta-small_d1_top1_10_pop_2000_q_2
+delta / top1             : 1 / 10
+pop / q                  : 2000 / 2
+best_weight              : 84.0
+base_time_sec            : 0.000
+search_time_sec          : 122.833
+search_time_inner_sec    : 122.634
+total_time_sec           : 122.833
+num_final_paths          : 2000
+cached_tree_pkl          : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_8round_134217728_delta-small_d1_top1_10_pop_2000_q_2_base.pkl
+cached_initial_paths_pkl : ./zcl/MCTS-Differential-Trail/saved_initial_paths/speck96_6round_134217728_initial_paths_delta-small_d1_top1_10_pop_2000_q_2.pkl
+result_txt               : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_14round_134217728_delta-small_d1_top1_10_pop_2000_q_2.txt
+result_pkl               : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_14round_134217728_delta-small_d1_top1_10_pop_2000_q_2.pkl
+best_path                : [(134217728, 0), (524288, 524288), (526336, 4720640), (4718600, 34095112), (8800354961416, 8800090851400), (31981568064, 70368745243136), (8520192, 4610), (36864, 16), (128, 0), (140737488355328, 140737488355328), (141287244169216, 141287244169220), (140739635838980, 145137682350112), (141289400041504, 176490951999780), (140754668257572, 145273040963585), (176609055246464, 142524731934860)]
+
+====================================================================================================
+setting                  : delta-large
+tag                      : delta-large_d3_top1_10_pop_2000_q_2
+delta / top1             : 3 / 10
+pop / q                  : 2000 / 2
+best_weight              : 84.0
+base_time_sec            : 0.000
+search_time_sec          : 5981.289
+search_time_inner_sec    : 5981.124
+total_time_sec           : 5981.289
+num_final_paths          : 2000
+cached_tree_pkl          : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_8round_134217728_delta-large_d3_top1_10_pop_2000_q_2_base.pkl
+cached_initial_paths_pkl : ./zcl/MCTS-Differential-Trail/saved_initial_paths/speck96_6round_134217728_initial_paths_delta-large_d3_top1_10_pop_2000_q_2.pkl
+result_txt               : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_14round_134217728_delta-large_d3_top1_10_pop_2000_q_2.txt
+result_pkl               : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_14round_134217728_delta-large_d3_top1_10_pop_2000_q_2.pkl
+best_path                : [(134217728, 0), (524288, 524288), (526336, 4720640), (4718600, 34095112), (8800354961416, 8800090851400), (31981568064, 70368745243136), (8520192, 4610), (36864, 16), (128, 0), (140737488355328, 140737488355328), (141287244169216, 141287244169220), (140739635838980, 145137682350112), (141289400041504, 176490951999780), (140754668257572, 145273040963585), (176609055246464, 142524731934860)]
+
+====================================================================================================
+setting                  : top1-small
+tag                      : top1-small_d2_top1_5_pop_2000_q_2
+delta / top1             : 2 / 5
+pop / q                  : 2000 / 2
+best_weight              : 84.0
+base_time_sec            : 0.000
+search_time_sec          : 1003.717
+search_time_inner_sec    : 1003.276
+total_time_sec           : 1003.717
+num_final_paths          : 2000
+cached_tree_pkl          : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_8round_134217728_top1-small_d2_top1_5_pop_2000_q_2_base.pkl
+cached_initial_paths_pkl : ./zcl/MCTS-Differential-Trail/saved_initial_paths/speck96_6round_134217728_initial_paths_top1-small_d2_top1_5_pop_2000_q_2.pkl
+result_txt               : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_14round_134217728_top1-small_d2_top1_5_pop_2000_q_2.txt
+result_pkl               : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_14round_134217728_top1-small_d2_top1_5_pop_2000_q_2.pkl
+best_path                : [(134217728, 0), (524288, 524288), (526336, 4720640), (4718600, 34095112), (8800354961416, 8800090851400), (31981568064, 70368745243136), (8520192, 4610), (36864, 16), (128, 0), (140737488355328, 140737488355328), (141287244169216, 141287244169220), (140739635838980, 145137682350112), (141289400041504, 176490951999780), (140754668257572, 145273040963585), (176609055246464, 142524731934860)]
+
+====================================================================================================
+setting                  : top1-large
+tag                      : top1-large_d2_top1_20_pop_2000_q_2
+delta / top1             : 2 / 20
+pop / q                  : 2000 / 2
+best_weight              : 84.0
+base_time_sec            : 0.000
+search_time_sec          : 1287.644
+search_time_inner_sec    : 1287.224
+total_time_sec           : 1287.644
+num_final_paths          : 2000
+cached_tree_pkl          : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_8round_134217728_top1-large_d2_top1_20_pop_2000_q_2_base.pkl
+cached_initial_paths_pkl : ./zcl/MCTS-Differential-Trail/saved_initial_paths/speck96_6round_134217728_initial_paths_top1-large_d2_top1_20_pop_2000_q_2.pkl
+result_txt               : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_14round_134217728_top1-large_d2_top1_20_pop_2000_q_2.txt
+result_pkl               : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_14round_134217728_top1-large_d2_top1_20_pop_2000_q_2.pkl
+best_path                : [(134217728, 0), (524288, 524288), (526336, 4720640), (4718600, 34095112), (8800354961416, 8800090851400), (31981568064, 70368745243136), (8520192, 4610), (36864, 16), (128, 0), (140737488355328, 140737488355328), (141287244169216, 141287244169220), (140739635838980, 145137682350112), (141289400041504, 176490951999780), (140754668257572, 145273040963585), (176609055246464, 142524731934860)]
+
+====================================================================================================
+setting                  : pop-small
+tag                      : pop-small_d2_top1_10_pop_1000_q_2
+delta / top1             : 2 / 10
+pop / q                  : 1000 / 2
+best_weight              : 84.0
+base_time_sec            : 0.000
+search_time_sec          : 770.847
+search_time_inner_sec    : 770.763
+total_time_sec           : 770.847
+num_final_paths          : 1000
+cached_tree_pkl          : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_8round_134217728_pop-small_d2_top1_10_pop_1000_q_2_base.pkl
+cached_initial_paths_pkl : ./zcl/MCTS-Differential-Trail/saved_initial_paths/speck96_6round_134217728_initial_paths_pop-small_d2_top1_10_pop_1000_q_2.pkl
+result_txt               : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_14round_134217728_pop-small_d2_top1_10_pop_1000_q_2.txt
+result_pkl               : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_14round_134217728_pop-small_d2_top1_10_pop_1000_q_2.pkl
+best_path                : [(134217728, 0), (524288, 524288), (526336, 4720640), (4718600, 34095112), (8800354961416, 8800090851400), (31981568064, 70368745243136), (8520192, 4610), (36864, 16), (128, 0), (140737488355328, 140737488355328), (141287244169216, 141287244169220), (140739635838980, 145137682350112), (141289400041504, 176490951999780), (140754668257572, 145273040963585), (176609055246464, 142524731934860)]
+
+====================================================================================================
+setting                  : pop-large
+tag                      : pop-large_d2_top1_10_pop_4000_q_2
+delta / top1             : 2 / 10
+pop / q                  : 4000 / 2
+best_weight              : 84.0
+base_time_sec            : 0.000
+search_time_sec          : 1432.496
+search_time_inner_sec    : 1431.934
+total_time_sec           : 1432.496
+num_final_paths          : 4000
+cached_tree_pkl          : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_8round_134217728_pop-large_d2_top1_10_pop_4000_q_2_base.pkl
+cached_initial_paths_pkl : ./zcl/MCTS-Differential-Trail/saved_initial_paths/speck96_6round_134217728_initial_paths_pop-large_d2_top1_10_pop_4000_q_2.pkl
+result_txt               : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_14round_134217728_pop-large_d2_top1_10_pop_4000_q_2.txt
+result_pkl               : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_14round_134217728_pop-large_d2_top1_10_pop_4000_q_2.pkl
+best_path                : [(134217728, 0), (524288, 524288), (526336, 4720640), (4718600, 34095112), (8800354961416, 8800090851400), (31981568064, 70368745243136), (8520192, 4610), (36864, 16), (128, 0), (140737488355328, 140737488355328), (141287244169216, 141287244169220), (140739635838980, 145137682350112), (141289400041504, 176490951999780), (140754668257572, 145273040963585), (176609055246464, 142524731934860)]
+
+====================================================================================================
+setting                  : q-1
+tag                      : q-1_d2_top1_10_pop_2000_q_1
+delta / top1             : 2 / 10
+pop / q                  : 2000 / 1
+best_weight              : 158.0
+base_time_sec            : 0.000
+search_time_sec          : 98.982
+search_time_inner_sec    : 98.708
+total_time_sec           : 98.982
+num_final_paths          : 2
+cached_tree_pkl          : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_8round_134217728_q-1_d2_top1_10_pop_2000_q_1_base.pkl
+cached_initial_paths_pkl : ./zcl/MCTS-Differential-Trail/saved_initial_paths/speck96_6round_134217728_initial_paths_q-1_d2_top1_10_pop_2000_q_1.pkl
+result_txt               : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_14round_134217728_q-1_d2_top1_10_pop_2000_q_1.txt
+result_pkl               : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_14round_134217728_q-1_d2_top1_10_pop_2000_q_1.pkl
+best_path                : [(134217728, 0), (524288, 524288), (526336, 4720640), (4718600, 34095112), (8796194211848, 8796466972744), (38559285312, 70404311892480), (41876591104, 324270555650), (311524067344, 2287204833280), (19878190792712, 2954950115336), (6056239431752, 17601078231048), (61575070220296, 202378860036168), (140771856486472, 70952859734541), (8830587015691, 13503511396961), (1374390059281, 108852725420569), (17596481537544, 8808982681283)]
+
+====================================================================================================
+setting                  : q-3
+tag                      : q-3_d2_top1_10_pop_2000_q_3
+delta / top1             : 2 / 10
+pop / q                  : 2000 / 3
+best_weight              : 84.0
+base_time_sec            : 0.000
+search_time_sec          : 773.745
+search_time_inner_sec    : 773.590
+total_time_sec           : 773.745
+num_final_paths          : 2000
+cached_tree_pkl          : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_8round_134217728_q-3_d2_top1_10_pop_2000_q_3_base.pkl
+cached_initial_paths_pkl : ./zcl/MCTS-Differential-Trail/saved_initial_paths/speck96_6round_134217728_initial_paths_q-3_d2_top1_10_pop_2000_q_3.pkl
+result_txt               : ./zcl/MCTS-Differential-Trail/saved_ea_txt/speck96/speck96_result_ea_14round_134217728_q-3_d2_top1_10_pop_2000_q_3.txt
+result_pkl               : ./zcl/MCTS-Differential-Trail/saved_trail/speck96_14round_134217728_q-3_d2_top1_10_pop_2000_q_3.pkl
+best_path                : [(134217728, 0), (524288, 524288), (526336, 4720640), (4718600, 34095112), (8800354961416, 8800090851400), (31981568064, 70368745243136), (8520192, 4610), (36864, 16), (128, 0), (140737488355328, 140737488355328), (141287244169216, 141287244169220), (140739635838980, 145137682350112), (141289400041504, 176490951999780), (140754668257572, 145273040963585), (176609055246464, 142524731934860)]
+
