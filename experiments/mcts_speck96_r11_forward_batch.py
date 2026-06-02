@@ -9,8 +9,9 @@ from typing import Optional, Tuple
 
 # ========== Directly editable settings ==========
 CORE_MODULE_FILENAME = "mcts_paper_aligned_timecap_stopflag.py"
-OUTPUT_TXT = "./MCTS/speck96_r11_forward_batch_results.txt"
-STOP_FLAG_DIR = "./MCTS/.stop_flags"
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+OUTPUT_TXT = os.path.join(PROJECT_ROOT, "MCTS", "speck96_r11_forward_batch_results.txt")
+STOP_FLAG_DIR = os.path.join(PROJECT_ROOT, "MCTS", ".stop_flags")
 
 BLOCK_SIZE = 96
 TOTAL_ROUNDS = 11

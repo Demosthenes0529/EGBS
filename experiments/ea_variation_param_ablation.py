@@ -15,6 +15,12 @@ from math import log2
 import ea_initial_population as init
 from multiprocessing import Pool, cpu_count
 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+def project_path(*parts):
+    return os.path.join(PROJECT_ROOT, *parts)
+
 word_size = 64
 MASK_VAL = 2 ** word_size - 1
 
@@ -712,7 +718,8 @@ def paths_search_add(diff_l, diff_r, tree, nr, top1=20, top2=10, delta=2, t1=14,
             break
     # === 输出结果 ===
     root_diff_l = diff_l
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_ea_{nr}round_{diff_l}.txt"
+    save_path1 = project_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_result_ea_{nr}round_{diff_l}.txt")
+    os.makedirs(os.path.dirname(save_path1), exist_ok=True)
     with open(save_path1, 'w') as f:
         f.write("=== 差分路径搜索结果 ===\n")
         f.write(f"Speck版本: {speck}\n")
@@ -729,7 +736,8 @@ def paths_search_add(diff_l, diff_r, tree, nr, top1=20, top2=10, delta=2, t1=14,
                 f.write(f"层 {j}: ({hex(diff_l)}, {hex(diff_r)}) | 分数: {node_score:.4f}\n")
             f.write(f"层 {len(path) - 1}: ({hex(path[-1][0])}, {hex(path[-1][1])})\n")
     # === 保存结构数据 ===
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_{root_diff_l}_evolution_data.pkl"
+    save_path2 = project_path("saved_trail", f"speck{speck}_{nr}round_{root_diff_l}_evolution_data.pkl")
+    os.makedirs(os.path.dirname(save_path2), exist_ok=True)
     with open(save_path2, 'wb') as f:
         pickle.dump((current_paths, tree), f)
     print(f"\n📁 结果已保存至:\n  {save_path1}\n  {save_path2}")
@@ -831,7 +839,8 @@ def paths_search_add_parallel(diff_l, diff_r, tree, nr, top1=10, top2=10, delta=
     # === 输出结果 ===
     root_diff_l = diff_l
     # save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_ea_{nr}round_{diff_l}_5.txt"
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_ea_{nr}round_{diff_l}_single-parent.txt"
+    save_path1 = project_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_result_ea_{nr}round_{diff_l}_single-parent.txt")
+    os.makedirs(os.path.dirname(save_path1), exist_ok=True)
     with open(save_path1, 'w') as f:
         f.write("=== 差分路径搜索结果 ===\n")
         f.write(f"Speck版本: {speck}\n")
@@ -849,7 +858,8 @@ def paths_search_add_parallel(diff_l, diff_r, tree, nr, top1=10, top2=10, delta=
                 f.write(f"层 {j}: ({hex(diff_l)}, {hex(diff_r)}) | 分数: {node_score:.4f}\n")
             f.write(f"层 {len(path) - 1}: ({hex(path[-1][0])}, {hex(path[-1][1])})\n")
     # === 保存结构数据 ===
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_{root_diff_l}_single-parent.pkl"
+    save_path2 = project_path("saved_trail", f"speck{speck}_{nr}round_{root_diff_l}_single-parent.pkl")
+    os.makedirs(os.path.dirname(save_path2), exist_ok=True)
     with open(save_path2, 'wb') as f:
         pickle.dump((current_paths, tree), f)
     print(f"\n📁 结果已保存至:\n  {save_path1}\n  {save_path2}")
@@ -919,7 +929,8 @@ def paths_search_sub(diff_l, diff_r, tree, nr, top1=20, top2=10, delta=2, t1=14,
             break
     # === 输出结果 ===
     root_diff_l = diff_l
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_ea_{nr}round_{diff_l}.txt"
+    save_path1 = project_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_result_ea_{nr}round_{diff_l}.txt")
+    os.makedirs(os.path.dirname(save_path1), exist_ok=True)
     with open(save_path1, 'w') as f:
         f.write("=== 差分路径搜索结果 ===\n")
         f.write(f"Speck版本: {speck}\n")
@@ -937,7 +948,8 @@ def paths_search_sub(diff_l, diff_r, tree, nr, top1=20, top2=10, delta=2, t1=14,
                 f.write(f"层 {j}: ({hex(diff_l)}, {hex(diff_r)}) | 分数: {node_score:.4f}\n")
             f.write(f"层 {len(path) - 1}: ({hex(path[-1][0])}, {hex(path[-1][1])})\n")
     # === 保存结构数据 ===
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_{root_diff_l}_evolution_data.pkl"
+    save_path2 = project_path("saved_trail", f"speck{speck}_{nr}round_{root_diff_l}_evolution_data.pkl")
+    os.makedirs(os.path.dirname(save_path2), exist_ok=True)
     with open(save_path2, 'wb') as f:
         pickle.dump((current_paths, tree), f)
     print(f"\n📁 结果已保存至:\n  {save_path1}\n  {save_path2}")
@@ -1039,7 +1051,8 @@ def paths_search_sub_parallel(diff_l, diff_r, tree, nr, top1=20, top2=10, delta=
     print(f"\n🎯 搜索完成，总耗时 {total_elapsed/60:.2f} 分钟")
     # === 输出结果 ===
     root_diff_l = diff_l
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_ea_{nr}round_{diff_l}.txt"
+    save_path1 = project_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_result_ea_{nr}round_{diff_l}.txt")
+    os.makedirs(os.path.dirname(save_path1), exist_ok=True)
     with open(save_path1, 'w') as f:
         f.write("=== 差分路径搜索结果 ===\n")
         f.write(f"Speck版本: {speck}\n")
@@ -1056,7 +1069,8 @@ def paths_search_sub_parallel(diff_l, diff_r, tree, nr, top1=20, top2=10, delta=
                 f.write(f"层 {j}: ({hex(diff_l)}, {hex(diff_r)}) | 分数: {node_score:.4f}\n")
             f.write(f"层 {len(path) - 1}: ({hex(path[-1][0])}, {hex(path[-1][1])})\n")
     # 保存结构数据
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_{root_diff_l}_evolution_data.pkl"
+    save_path2 = project_path("saved_trail", f"speck{speck}_{nr}round_{root_diff_l}_evolution_data.pkl")
+    os.makedirs(os.path.dirname(save_path2), exist_ok=True)
     with open(save_path2, 'wb') as f:
         pickle.dump((current_paths, tree), f)
     print(f"\n📁 结果已保存至:\n  {save_path1}\n  {save_path2}")
@@ -1068,7 +1082,7 @@ def run_one_experiment(diff_l=0x8000000, diff_r=0x0, base_nr=8, search_nr=11, n_
     tree = defaultdict(list)
     tree[(diff_l, diff_r)] = []
     t1 = time.time()
-    saved_tree_path1 = f"./saved_trail/speck{2*word_size}_{base_nr}round_{diff_l}_evolution_data.pkl"
+    saved_tree_path1 = project_path("saved_trail", f"speck{2*word_size}_{base_nr}round_{diff_l}_evolution_data.pkl")
     with open(saved_tree_path1, "rb") as f:
         current_paths, tree = pickle.load(f)
     diff_nodes, counts = count_difference(current_paths, 4)
@@ -1100,8 +1114,8 @@ def _build_setting_tag(setting_name, delta, top1, population_size, q):
 
 
 def _ensure_dirs_for_speck(speck):
-    os.makedirs(f"./saved_ea_txt/speck{speck}", exist_ok=True)
-    os.makedirs("./saved_trail", exist_ok=True)
+    os.makedirs(project_path("saved_ea_txt", f"speck{speck}"), exist_ok=True)
+    os.makedirs(project_path("saved_trail"), exist_ok=True)
     os.makedirs("./saved_initial_paths", exist_ok=True)
     os.makedirs("./param_ablation", exist_ok=True)
 
@@ -1110,8 +1124,8 @@ def _save_base_stage_outputs(current_paths, tree, diff_l, diff_r, nr, speck, ela
     """保存 base 阶段(例如 8 轮 first_best_search)的结果，避免不同参数组互相覆盖。"""
     _ensure_dirs_for_speck(speck)
     tag = _sanitize_tag(save_tag)
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_base_result_{nr}round_{diff_l}_{tag}.txt"
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_{diff_l}_{tag}_base.pkl"
+    save_path1 = project_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_base_result_{nr}round_{diff_l}_{tag}.txt")
+    save_path2 = project_path("saved_trail", f"speck{speck}_{nr}round_{diff_l}_{tag}_base.pkl")
 
     with open(save_path1, 'w', encoding='utf-8') as f:
         f.write("=== Base Stage Result ===\n")
@@ -1257,8 +1271,8 @@ def paths_search_add_parallel_tagged(diff_l, diff_r, tree, nr,
 
     _ensure_dirs_for_speck(speck)
     tag = _sanitize_tag(save_tag)
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_ea_{nr}round_{diff_l}_{tag}.txt"
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_{diff_l}_{tag}.pkl"
+    save_path1 = project_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_result_ea_{nr}round_{diff_l}_{tag}.txt")
+    save_path2 = project_path("saved_trail", f"speck{speck}_{nr}round_{diff_l}_{tag}.pkl")
 
     with open(save_path1, 'w', encoding='utf-8') as f:
         f.write("=== 差分路径搜索结果 ===\n")
@@ -1294,16 +1308,16 @@ def _get_best_result_from_paths(paths, nr):
 
 
 def _get_cached_tree_path(diff_l, base_nr, save_tag):
-    return (
-        f"./saved_trail/"
-        f"speck{2*word_size}_{base_nr}round_{diff_l}_{save_tag}_base.pkl"
+    return project_path(
+        "saved_trail",
+        f"speck{2*word_size}_{base_nr}round_{diff_l}_{save_tag}_base.pkl",
     )
 
 
 def _get_cached_initial_paths_path(diff_l, save_tag, initial_round=6):
-    return (
-        f"./saved_initial_paths/"
-        f"speck{2*word_size}_{initial_round}round_{diff_l}_initial_paths_{save_tag}.pkl"
+    return project_path(
+        "saved_initial_paths",
+        f"speck{2*word_size}_{initial_round}round_{diff_l}_initial_paths_{save_tag}.pkl",
     )
 
 def run_one_ablation(setting_name,
@@ -1532,8 +1546,8 @@ def _sync_speck128_globals():
         pass
 
 def _save_speck128_result(current_paths, tree, diff_l, diff_r, nr, speck, save_tag, elapsed_sec):
-    save_dir_txt = f"./saved_ea_txt/speck{speck}"
-    save_dir_pkl = "./saved_trail"
+    save_dir_txt = project_path("saved_ea_txt", f"speck{speck}")
+    save_dir_pkl = project_path("saved_trail")
     os.makedirs(save_dir_txt, exist_ok=True)
     os.makedirs(save_dir_pkl, exist_ok=True)
 

@@ -24,7 +24,9 @@ DIFF_START=21
 DIFF_END=37
 DIFF_STEP=2
 
-BASE_DIR="/home/user/speck_output/speck96"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+BASE_DIR="${PROJECT_ROOT}/milp_output/speck96"
 LP_PREFIX="speck96diff"
 LP_SUFFIX="-round-${ROUND}-fixed.lp"
 SOL_PREFIX="speck96round${ROUND}"

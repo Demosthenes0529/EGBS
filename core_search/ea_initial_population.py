@@ -14,8 +14,8 @@ import multiprocessing as mp
 import os
 
 def _base_dir():
-    # Directory containing this script; works on Windows/Linux
-    return os.path.dirname(os.path.abspath(__file__))
+    # Project root; keeps outputs stable no matter where the command is launched.
+    return os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 
 def _ensure_dir(path):
@@ -395,9 +395,10 @@ def first_best_search_add(diff_l, diff_r, tree, nr, top1=20, top2=10, delta=2, t
             print(f"  选择完成: 保留前{population_size}条最优路径 (最低分数: {evaluated_paths[0][0]})")
             current_paths = selected_paths
     # 结果输出到文件
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_ea_{nr}round_({diff_l},{diff_r}).txt"
+    save_path1 = _out_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_result_ea_{nr}round_({diff_l},{diff_r}).txt")
     root_diff_l = diff_l
     root_diff_r = diff_r
+    _ensure_dir(os.path.dirname(save_path1))
     with open(save_path1, 'w') as f:
         f.write("=== 差分路径搜索结果 ===\n")
         f.write(f"总层数: {nr}\n")
@@ -417,7 +418,8 @@ def first_best_search_add(diff_l, diff_r, tree, nr, top1=20, top2=10, delta=2, t
                 f.write(f"层 {len(path)-1}: {path[len(path)-1][0]}, {path[len(path)-1][1]}, ({hex(path[len(path)-1][0])}, {hex(path[len(path)-1][1])})")
                 f.write("\n")
     # 保存结果
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_({root_diff_l},{root_diff_r})_evolution_data.pkl"
+    save_path2 = _out_path("saved_trail", f"speck{speck}_{nr}round_({root_diff_l},{root_diff_r})_evolution_data.pkl")
+    _ensure_dir(os.path.dirname(save_path2))
     with open(save_path2, 'wb') as f:
         pickle.dump((current_paths, tree), f) 
     return current_paths, tree
@@ -488,8 +490,9 @@ def first_best_search_sub(diff_l, diff_r, tree, nr, top1=20, top2=10, delta=2, t
             print(f"  选择完成: 保留前{population_size}条最优路径 (最低分数: {evaluated_paths[0][0]})")
             current_paths = selected_paths
     # 结果输出到文件
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_ea_{nr}round_{diff_l}.txt"
+    save_path1 = _out_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_result_ea_{nr}round_{diff_l}.txt")
     root_diff_l = diff_l
+    _ensure_dir(os.path.dirname(save_path1))
     with open(save_path1, 'w') as f:
         f.write("=== 差分路径搜索结果 ===\n")
         f.write(f"总层数: {nr}\n")
@@ -509,7 +512,8 @@ def first_best_search_sub(diff_l, diff_r, tree, nr, top1=20, top2=10, delta=2, t
                 f.write(f"层 {len(path)-1}: {path[len(path)-1][0]}, {path[len(path)-1][1]}, ({hex(path[len(path)-1][0])}, {hex(path[len(path)-1][1])})")
                 f.write("\n")   
     # 保存结果
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_{root_diff_l}_evolution_data.pkl"
+    save_path2 = _out_path("saved_trail", f"speck{speck}_{nr}round_{root_diff_l}_evolution_data.pkl")
+    _ensure_dir(os.path.dirname(save_path2))
     with open(save_path2, 'wb') as f:
         pickle.dump((current_paths, tree), f)                 
     return current_paths, tree
@@ -622,9 +626,10 @@ def first_best_search_add_parallel(diff_l, diff_r, tree, nr,top1=20, top2=10, de
     total_elapsed = time.time() - total_start_time
     print(f"\n🎯 搜索完成，总耗时 {total_elapsed/60:.2f} 分钟")
     # === 输出结果 ===
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_egbs_{nr}round_({diff_l},{diff_r}).txt"
+    save_path1 = _out_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_result_egbs_{nr}round_({diff_l},{diff_r}).txt")
     root_diff_l = diff_l
     root_diff_r = diff_r
+    _ensure_dir(os.path.dirname(save_path1))
     with open(save_path1, 'w') as f:
         f.write("=== 差分路径搜索结果 ===\n")
         f.write(f"Speck版本: {speck}\n")
@@ -641,7 +646,8 @@ def first_best_search_add_parallel(diff_l, diff_r, tree, nr,top1=20, top2=10, de
                 f.write(f"层 {j}: ({hex(diff_l)}, {hex(diff_r)}) | 分数: {node_score:.4f}\n")
             f.write(f"层 {len(path) - 1}: ({hex(path[-1][0])}, {hex(path[-1][1])})\n")
     # === 保存结果 ===
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_({root_diff_l},{root_diff_r})_evolution_egbs_data.pkl"
+    save_path2 = _out_path("saved_trail", f"speck{speck}_{nr}round_({root_diff_l},{root_diff_r})_evolution_egbs_data.pkl")
+    _ensure_dir(os.path.dirname(save_path2))
     with open(save_path2, 'wb') as f:
         pickle.dump((current_paths, tree), f)
     print(f"\n📁 结果已保存至:\n  {save_path1}\n  {save_path2}")
@@ -730,7 +736,8 @@ def first_best_search_sub_parallel(diff_l, diff_r, tree, nr, top1=20, top2=10, d
     # === 输出结果 ===
     root_diff_l = diff_l
     root_diff_r = diff_r
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_sub_egbs_{nr}round_({diff_l},{diff_r}).txt"
+    save_path1 = _out_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_result_sub_egbs_{nr}round_({diff_l},{diff_r}).txt")
+    _ensure_dir(os.path.dirname(save_path1))
     with open(save_path1, 'w') as f:
         f.write("=== 差分路径搜索结果 ===\n")
         f.write(f"Speck版本: {speck}\n")
@@ -747,7 +754,8 @@ def first_best_search_sub_parallel(diff_l, diff_r, tree, nr, top1=20, top2=10, d
                 f.write(f"层 {j}: ({hex(diff_l)}, {hex(diff_r)}) | 分数: {node_score:.4f}\n")
             f.write(f"层 {len(path) - 1}: ({hex(path[-1][0])}, {hex(path[-1][1])})\n")
     # === 保存结果 ===
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_({root_diff_l},{root_diff_r})_evolution_sub_egbs_data.pkl"
+    save_path2 = _out_path("saved_trail", f"speck{speck}_{nr}round_({root_diff_l},{root_diff_r})_evolution_sub_egbs_data.pkl")
+    _ensure_dir(os.path.dirname(save_path2))
     with open(save_path2, 'wb') as f:
         pickle.dump((current_paths, tree), f)
 
@@ -835,7 +843,8 @@ def first_best_search_sub_parallel_batch(diff_l, diff_r, tree, nr,
     # === 输出结果 ===
     root_diff_l = diff_l
     root_diff_r = diff_r
-    save_path1 = f"./saved_ea_txt/speck{speck}/speck{speck}_result_sub_egbs_{nr}round_({diff_l},{diff_r}).txt"
+    save_path1 = _out_path("saved_ea_txt", f"speck{speck}", f"speck{speck}_result_sub_egbs_{nr}round_({diff_l},{diff_r}).txt")
+    _ensure_dir(os.path.dirname(save_path1))
     with open(save_path1, 'w') as f:
         f.write("=== 差分路径搜索结果 ===\n")
         f.write(f"Speck版本: {speck}\n")
@@ -853,7 +862,8 @@ def first_best_search_sub_parallel_batch(diff_l, diff_r, tree, nr,
                 f.write(f"层 {j}: ({hex(diff_l)}, {hex(diff_r)}) | 分数: {node_score:.4f}\n")
             f.write(f"层 {len(path) - 1}: ({hex(path[-1][0])}, {hex(path[-1][1])})\n")
 
-    save_path2 = f"./saved_trail/speck{speck}_{nr}round_({root_diff_l},{root_diff_r})_evolution_sub_egbs_data.pkl"
+    save_path2 = _out_path("saved_trail", f"speck{speck}_{nr}round_({root_diff_l},{root_diff_r})_evolution_sub_egbs_data.pkl")
+    _ensure_dir(os.path.dirname(save_path2))
     with open(save_path2, 'wb') as f:
         pickle.dump((current_paths, tree), f)
 

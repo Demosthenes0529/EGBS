@@ -8,8 +8,9 @@ from typing import Dict, List, Tuple
 
 # ========== Directly editable settings ==========
 CORE_MODULE_FILENAME = "mcts_paper_aligned_timecap_stopflag.py"
-OUTPUT_TXT = "./MCTS/mcts_mixed_onehour_cases_results.txt"
-STOP_FLAG_DIR = "./MCTS/.stop_flags_mixed_cases"
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+OUTPUT_TXT = os.path.join(PROJECT_ROOT, "MCTS", "mcts_mixed_onehour_cases_results.txt")
+STOP_FLAG_DIR = os.path.join(PROJECT_ROOT, "MCTS", ".stop_flags_mixed_cases")
 
 MAX_WALL_TIME_SECONDS = 3600
 PARALLEL_PROCESSES = 32

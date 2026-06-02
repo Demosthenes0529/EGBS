@@ -10,6 +10,11 @@ from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 State = Tuple[int, int]
 ScoreKey = Tuple[int, State]
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+def project_path(*parts: str) -> str:
+    return os.path.join(PROJECT_ROOT, *parts)
 
 
 # -----------------------------
@@ -932,7 +937,7 @@ def main() -> None:
     PARALLEL_RESTARTS = 32
 
     LOG_INTERVAL = 2000
-    SAVE_RESULT_FILE = "./MCTS/mcts_last_result.txt"
+    SAVE_RESULT_FILE = project_path("MCTS", "mcts_last_result.txt")
     # ===============================================
 
     search_direction = SEARCH_DIRECTION.lower()

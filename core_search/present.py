@@ -8,6 +8,13 @@ from collections import defaultdict
 import multiprocessing as mp
 from tqdm import tqdm
 import time
+import os
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+def project_path(*parts):
+    return os.path.join(PROJECT_ROOT, *parts)
 
 raw_P = [0,  16, 32, 48, 1,  17, 33, 49, 2,  18, 34, 50, 3,  19, 35, 51,
      4,  20, 36, 52, 5,  21, 37, 53, 6,  22, 38, 54, 7,  23, 39, 55,
@@ -245,7 +252,8 @@ def first_best_search_present(root_diff:int, nr:int, tree:dict, top1=20, top2=10
     final_evaluated.sort(key=lambda x: x[0])  # (激活S盒, 概率)
     sorted_paths = [p for (_, p) in final_evaluated]
     # ============ 保存到文件 ============
-    save_path = f"./saved_ea_txt/present/present_result_{nr}round_{hex(root_diff)}.txt"
+    save_path = project_path("saved_ea_txt", "present", f"present_result_{nr}round_{hex(root_diff)}.txt")
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
     with open(save_path, "w", encoding="utf-8") as f:
         f.write("=== PRESENT 差分束搜索结果 ===\n")
         f.write(f"总轮数: {nr}\n")
@@ -345,7 +353,8 @@ def first_best_search_present_parallel(root_diff:int, nr:int, tree:dict, top1=20
     final_evaluated.sort(key=lambda x: x[0])
     sorted_paths = [p for (_, p) in final_evaluated]
     # ========= 保存输出 =========
-    save_path = f"./saved_ea_txt/present/present_result_{nr}round_{hex(root_diff)}.txt"
+    save_path = project_path("saved_ea_txt", "present", f"present_result_{nr}round_{hex(root_diff)}.txt")
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
     with open(save_path, "w", encoding="utf-8") as f:
         f.write("=== PRESENT 差分束搜索结果 ===\n")
         f.write(f"总轮数: {nr}\n")

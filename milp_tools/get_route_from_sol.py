@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
+import os
 import re
 import sys
+
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+def solution_path(blocksize, rounds, rev):
+    suffix = "-rev" if rev == 1 else ""
+    return os.path.join(
+        PROJECT_ROOT,
+        "milp_output",
+        f"speck{blocksize}",
+        f"speck{blocksize}round{rounds}{suffix}.sol",
+    )
 
 def parse_sol_file(filename, blocksize=32):
     """
@@ -189,10 +203,7 @@ def main():
     rev = 1
     
     # 构建文件名
-    if rev == 1:
-        filename = f"/home/user/speck_output/speck{blocksize}/speck{blocksize}round{rounds}-rev.sol"
-    else:
-        filename = f"/home/user/speck_output/speck{blocksize}/speck{blocksize}round{rounds}.sol"
+    filename = solution_path(blocksize, rounds, rev)
     
     # 检查文件是否存在
     try:
@@ -224,10 +235,7 @@ if __name__ == "__main__":
     
     rev = 1
     # 构建文件名
-    if rev == 1:
-        filename = f"/home/user/speck_output/speck{blocksize}/speck{blocksize}round{rounds}-rev.sol"
-    else:
-        filename = f"/home/user/speck_output/speck{blocksize}/speck{blocksize}round{rounds}.sol"
+    filename = solution_path(blocksize, rounds, rev)
     
     # 检查文件是否存在
     try:

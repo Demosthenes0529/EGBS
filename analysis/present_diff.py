@@ -1,5 +1,7 @@
-﻿import os
+import os
 import re
+from pathlib import Path
+
 
 # ===== 1. 生成所有输入差分 =====
 w1 = [1 << i for i in range(64)]
@@ -7,7 +9,8 @@ w2 = [(1 << i) | (1 << j) for i in range(64) for j in range(i + 1, 64)]
 all_diffs = w1 + w2
 
 # ===== 2. 结果目录 =====
-RESULT_DIR = "./saved_ea_txt/present"   # 按你的实际路径修改
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+RESULT_DIR = str(PROJECT_ROOT / "saved_ea_txt" / "present")
 ROUND = 14
 
 # ===== 3. 正则：匹配路径1的总分 =====
@@ -34,7 +37,7 @@ for diff in all_diffs:
             m = path1_pattern.search(line)
             if m:
                 min_score = float(m.group(1))
-                break   # 只要路径1
+                break
 
     if min_score is None:
         print(f"[WARN] 未找到路径1总分: {filename}")
@@ -46,17 +49,15 @@ for diff in all_diffs:
         "min_score": min_score
     })
 
-# ===== 5. 按 diff 或 score 排序（任选）=====
+# ===== 5. 按 diff 排序 =====
 results.sort(key=lambda x: x["diff_int"])
-# results.sort(key=lambda x: x["min_score"])
 
 # ===== 6. 输出为表格（CSV）=====
-output_csv = "present_14round_min_score_table.csv"
+output_csv = PROJECT_ROOT / "present_14round_min_score_table.csv"
 with open(output_csv, "w", encoding="utf-8") as f:
     f.write("diff_hex,diff_int,min_score\n")
     for r in results:
         f.write(f"{r['diff_hex']},{r['diff_int']},{r['min_score']}\n")
 
-print(f"✅ 已完成，共收集 {len(results)} 条结果")
-print(f"📁 输出文件: {output_csv}")
-
+print(f"已完成，共收集 {len(results)} 条结果")
+print(f"输出文件: {output_csv}")

@@ -6,6 +6,13 @@ from random import *
 import os
 
 
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+def project_path(*parts):
+    return os.path.join(PROJECT_ROOT, *parts)
+
+
 
 
 class speck():
@@ -209,6 +216,6 @@ def main():
 if __name__ == '__main__':
     blocksize = 96
     nr = 11
-    output_dir = f'/home/user/speck_output/speck{blocksize}'
+    output_dir = project_path("milp_output", f"speck{blocksize}")
     os.makedirs(output_dir, exist_ok=True)
     main()

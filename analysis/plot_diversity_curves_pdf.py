@@ -17,7 +17,8 @@ SPECK_BITS = 96
 ROUND_MIN = 5
 ROUND_MAX = 14
 
-BASE_DIR = "./saved_metrics"
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+BASE_DIR = os.path.join(PROJECT_ROOT, "saved_metrics")
 OUT_DIR = os.path.join(
     BASE_DIR,
     f"speck{SPECK_BITS}",
